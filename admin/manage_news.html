@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BirHaber - Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+         <!-- Sidebar Start -->
+         <div class="sidebar pe-4 pb-3">
+            <nav class="navbar navbar-dark">
+                <a href="dashboard.html" class="navbar-brand mx-4 mb-3 d-flex align-items-center">
+                    <h3 class="text-primary me-2 mb-0"><i class="fa fa-user-edit me-2"></i>BirHaber</h3>
+                    <a href="#" class="sidebar-toggler flex-shrink-0 ms-2 mb-0">
+                        <i style="margin-bottom: 20px;" class="fa fa-bars"></i>
+                    </a>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Umut Gülfidan</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="dashboard.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="manage_user.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Üyeleri Yönet</a>
+                    <a href="manage_news.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Haberleri Yönet</a>
+                    <a href="manage_announcements.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Duyuruları Yönet</a>
+                    <a href="../index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Anasayfaya Dön</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand navbar-dark sticky-top px-4 py-0">
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Mesajlar</span>
+                        </a>
+                        <div style="width: max-content; padding-left: 50px;" class="dropdown-menu dropdown-menu-end  border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0 colorblack">Jhon sana bir mesaj gönderdi.</h6>
+                                        <small>15 dakika önce</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0 colorblack">Jhon sana bir mesaj gönderdi.</h6>
+                                        <small>15 dakika önce</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0 colorblack">Jhon sana bir mesaj gönderdi.</h6>
+                                        <small>15 dakika önce</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">Tüm mesajları gör.</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Bildirimler</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end  border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0 colorblack">Yeni şikayet eklendi.</h6>
+                                <small>15 dakika önce</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0 colorblack">Yeni şikayet eklendi.</h6>
+                                <small>15 dakika önce</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0 colorblack">Yeni şikayet eklendi.</h6>
+                                <small>15 dakika önce</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">Tüm bildirimleri gör.</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-inline-flex">Umut Gülfidan</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">Profilim</a>
+                            <a href="#" class="dropdown-item">Ayarlar</a>
+                            <a href="#" class="dropdown-item">Anasayfaya git</a>
+                            <a href="#" class="dropdown-item">Çıkış Yap</a>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+            <!-- Modal for Adding News -->
+            <div class="modal fade" id="addNewsModal" tabindex="-1" aria-labelledby="addNewsModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title colorblack" id="addNewsModalLabel">Haber Ekle / Düzenle</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="add-news-form">
+                                <div class="mb-3">
+                                    <label for="newsTitle" class="form-label">Haber Başlığı</label>
+                                    <input type="text" class="form-control bg-transparent" id="newsTitle" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newsCategory" class="form-label">Kategoriler</label>
+                                    <input type="text" class="form-control bg-transparent" id="newsCategory" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newsDescription" class="form-label">Kısa Açıklama</label>
+                                    <textarea class="form-control bg-transparent" id="newsDescription" rows="3"
+                                        required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newsDescription" class="form-label">Haber Tam Metni</label>
+                                    <textarea class="form-control bg-transparent" id="newsText" rows="3"
+                                        required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newsImage" class="form-label">Haber Resmi</label>
+                                    <input type="file" class="form-control bg-transparent" id="newsImage"
+                                        accept="image/*" required>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                            <button type="button" class="btn btn-primary" id="saveNewsBtn">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal for Adding News End -->
+            <div class="col-12">
+                <div class="rounded h-100 p-4">
+                    <h6 class="mb-4">Haber Yönetim</h6>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr class="colorblack">
+                                    <th scope="col">Haber Resmi</th>
+                                    <th scope="col">Haber ID</th>
+                                    <th scope="col">Haber Başlığı</th>
+                                    <th scope="col">Kısa Açıklama</th>
+                                    <th scope="col">Kategoriler</th>
+                                    <th scope="col">Yükleyen</th>
+                                    <th scope="col">Yüklenme Tarihi</th>
+                                    <th scope="col">Okunma Sayısı</th>
+                                    <th scope="col">Aksiyonlar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="haber-tablo-body" class="colorb"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <script>
+                const tableBody = document.getElementById('haber-tablo-body');
+                const kategorilerListesi = ["Spor, Siyaset", "Teknoloji, Eğlence", "Ekonomi, Dünya"];
+                const yukleyenListesi = ["John Doe", "Mark Otto", "Jacob Thornton"];
+
+                for (let i = 1; i <= 20; i++) {
+                    const kategori = kategorilerListesi[i % kategorilerListesi.length];
+                    const yukleyen = yukleyenListesi[i % yukleyenListesi.length];
+                    const yuklenmeTarihi = `2024-12-${(i % 30 + 1).toString().padStart(2, '0')}`;
+                    const okunmaSayisi = Math.floor(Math.random() * 200);
+
+                    const row = `
+                        <tr>
+                            <td><i class="fa fa-newspaper fa-2x text-secondary"></i></td>
+                            <td>${i}</td>
+                            <td>Haber Başlığı ${i}</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit ${i}.</td>
+                            <td>${kategori}</td>
+                            <td>${yukleyen}</td>
+                            <td>${yuklenmeTarihi}</td>
+                            <td>${okunmaSayisi}</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#addNewsModal" >Düzenle</button>
+                                <button class="btn btn-danger btn-sm">Sil</button>
+                            </td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                }
+            </script>
+
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class=" rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">BirHaber</a>, Tüm Hakları Saklıdır. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

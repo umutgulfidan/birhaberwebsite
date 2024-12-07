@@ -1,0 +1,67 @@
+/*Genel Ayarlamalar*/
+body > div > div.sidebar.pe-4.pb-3.open{
+    z-index: 3;
+}
+body > div > div.content > nav{
+    z-index: 1;
+}
+
+/* Normal desktop :1200px. */
+@media (min-width: 1200px) {
+    body > div > div.sidebar.pe-4.pb-3 > nav > a.sidebar-toggler.flex-shrink-0.ms-2.mb-0 > i{
+        display: none;
+    }
+}
+
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+    body > div > div.sidebar.pe-4.pb-3 > nav > a.sidebar-toggler.flex-shrink-0.ms-2.mb-0 > i{
+        display: none;
+    }
+}
+
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    body > div > div.content > nav > a.navbar-brand.d-flex.d-lg-none.me-4 > h2 > i {
+        display: none !important;
+    }
+
+}
+
+ 
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    .nav-item span.d-inline-flex,body > div > div.content > nav > a.navbar-brand.d-flex.d-lg-none.me-4 > h2 > i {
+        display: none !important; /* Yazıyı gizle */
+    }
+
+    .nav-item img {
+        width: 35px; /* Profil fotoğrafını biraz daha küçült */
+        height: 35px;
+    }
+    /* Küçük ekranlarda dropdown menüyü ortala */
+    .dropdown-menu {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 3;
+    }
+    body > div > div.content > div.container-fluid.pt-4.px-4.colorblack > div{
+        z-index: 1;
+    }
+
+}
+ 
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .nav-item span.d-inline-flex,body > div > div.content > nav > a.navbar-brand.d-flex.d-lg-none.me-4 > h2 > i  {
+        display: none !important; /* Yazıyı gizle */
+    }
+
+    .nav-item img {
+        width: 35px; /* Profil fotoğrafını biraz daha küçült */
+        height: 35px;
+    }
+
+}
