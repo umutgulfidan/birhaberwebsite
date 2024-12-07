@@ -212,7 +212,7 @@
                             <h2 class="contact-title">İletişim</h2>
                         </div>
                         <div class="col-lg-8">
-                            <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <form id="contactForm" method="POST" onsubmit="handleSubmit(event)">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
@@ -221,12 +221,12 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adınız Soyadınız'" placeholder="Adınız Soyadınız">
+                                            <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adınız Soyadınız'" placeholder="Adınız Soyadınız">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-Mail'" placeholder="E-Mail">
+                                            <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-Mail'" placeholder="E-Mail">
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -242,6 +242,26 @@
                         </div>
                     </div>
                 </div>
+                
+                <script>
+                    // Formu gönderme işlemi için fonksiyon
+                    function handleSubmit(event) {
+                        event.preventDefault(); // Formu engelle
+                        
+                        let name = document.getElementById('name').value;
+                        let email = document.getElementById('email').value;
+                        let subject = document.getElementById('subject').value;
+                        let message = document.getElementById('message').value;
+                        
+                        // Mailto URL'sini oluşturma
+                        let mailtoLink = `mailto:iletisim@jpastane.com?subject=${encodeURIComponent(subject)}&body=Ad: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0A%0AMesaj:%0A${encodeURIComponent(message)}`;
+                        
+                        // Mailto bağlantısını açma
+                        window.location.href = mailtoLink;
+                    }
+                </script>
+                
+                
             </div>
             <div class="row d-flex justify-content-between align-items-center text-center">
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">

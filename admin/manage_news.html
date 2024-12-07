@@ -32,6 +32,8 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/responsive.css">
 
+    
+
 </head>
 
 <body>
@@ -84,13 +86,19 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
+                <form class="d-none d-md-flex ms-4 w-auto align-items-center">
+                    <input class="form-control border-0 me-2" type="search" placeholder="Ara...">
+                </form>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addNewsModal">
+                    Haber EKle
+                </button>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-envelope me-lg-2"></i>
                             <span class="d-none d-lg-inline-flex">Mesajlar</span>
                         </a>
-                        <div style="width: max-content; padding-left: 50px;" class="dropdown-menu dropdown-menu-end  border-0 rounded-0 rounded-bottom m-0">
+                        <div style="width: max-content;" class="dropdown-menu dropdown-menu-end  border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
                                     <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
@@ -166,6 +174,25 @@
             </nav>
             <!-- Navbar End -->
 
+            <!-- Modal for Deleting News -->
+<div class="modal fade" id="deleteNewsModal" tabindex="-1" aria-labelledby="deleteNewsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header colorblack">
+                <h5 class="modal-title colorblackx" id="deleteNewsModalLabel">Duyuru Silme Onayı</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body colorblack">
+                <p>Bu duyuruyu silmek istediğinize emin misiniz?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+                <button type="button" class="btn btn-danger" id="deleteNewsBtn">Sil</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal for Deleting News End -->
             <!-- Modal for Adding News -->
             <div class="modal fade" id="addNewsModal" tabindex="-1" aria-labelledby="addNewsModalLabel"
                 aria-hidden="true">
@@ -258,7 +285,7 @@
                             <td>${okunmaSayisi}</td>
                             <td>
                                 <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#addNewsModal" >Düzenle</button>
-                                <button class="btn btn-danger btn-sm">Sil</button>
+                                <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteNewsModal">Sil</button>
                             </td>
                         </tr>
                     `;

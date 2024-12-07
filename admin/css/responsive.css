@@ -11,6 +11,7 @@ body > div > div.content > nav{
     body > div > div.sidebar.pe-4.pb-3 > nav > a.sidebar-toggler.flex-shrink-0.ms-2.mb-0 > i{
         display: none;
     }
+
 }
 
 
@@ -27,7 +28,9 @@ body > div > div.content > nav{
     body > div > div.content > nav > a.navbar-brand.d-flex.d-lg-none.me-4 > h2 > i {
         display: none !important;
     }
-
+    body > div > div.content > nav > div > div:nth-child(1) > div{
+        padding: none;
+    }
 }
 
  
@@ -50,8 +53,14 @@ body > div > div.content > nav{
     body > div > div.content > div.container-fluid.pt-4.px-4.colorblack > div{
         z-index: 1;
     }
-
+    body > div > div.content > nav > div > div:nth-child(1) > div{
+        padding-left: 60px !important;
+    }
+    body > div > div.content > nav > button{
+        display: none;
+    }
 }
+
  
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -63,5 +72,10 @@ body > div > div.content > nav{
         width: 35px; /* Profil fotoğrafını biraz daha küçült */
         height: 35px;
     }
-
+    html, body {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 }
