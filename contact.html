@@ -243,23 +243,6 @@
                     </div>
                 </div>
                 
-                <script>
-                    // Formu gönderme işlemi için fonksiyon
-                    function handleSubmit(event) {
-                        event.preventDefault(); // Formu engelle
-                        
-                        let name = document.getElementById('name').value;
-                        let email = document.getElementById('email').value;
-                        let subject = document.getElementById('subject').value;
-                        let message = document.getElementById('message').value;
-                        
-                        // Mailto URL'sini oluşturma
-                        let mailtoLink = `mailto:iletisim@jpastane.com?subject=${encodeURIComponent(subject)}&body=Ad: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0A%0AMesaj:%0A${encodeURIComponent(message)}`;
-                        
-                        // Mailto bağlantısını açma
-                        window.location.href = mailtoLink;
-                    }
-                </script>
                 
                 
             </div>
@@ -293,22 +276,37 @@
                 </div>
             </div>
         </div>
+
+        <!-- config.js dosyasını ekliyoruz -->
+        <script src="config.js"></script>
+    
+        <!-- Dinamik olarak Google Maps API'yi yüklemek için script -->
         <script>
+            // API Key'i config.js'den al ve Google Maps API'yi yükle
+            const loadGoogleMapsAPI = () => {
+                const script = document.createElement('script');
+                script.src = `https://maps.googleapis.com/maps/api/js?key=${config.API_KEY}&callback=initMap`;
+                script.async = true;
+                script.defer = true;
+                document.body.appendChild(script);
+            };
+    
+            // initMap fonksiyonunu tanımla
             function initMap() {
-                var officeLocation = { lat: 40.8222, lng: 29.9216 };
-                var map = new google.maps.Map(document.getElementById('map'), {
+                const officeLocation = { lat: 40.8222, lng: 29.9216 };
+                const map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 15,
                     center: officeLocation,
                     draggable: true // Haritanın sürüklenebilir olması
                 });
-                var marker = new google.maps.Marker({
+                const marker = new google.maps.Marker({
                     position: officeLocation,
                     map: map
                 });
             }
-        </script>
-        <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9prHgxNvGqgF1rc6I3f24oHCHW_13TV8&callback=initMap">
+    
+            // Google Maps API'yi yükle
+            loadGoogleMapsAPI();
         </script>
 
 

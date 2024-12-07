@@ -35,23 +35,23 @@ $(document).ready(function(){
             },
             messages: {
                 name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
+                    required: "Hadi ama, bir ismin var, değil mi?",
+                    minlength: "Adınız en az 2 karakterden oluşmalı."
                 },
                 subject: {
-                    required: "come on, you have a subject, don't you?",
-                    minlength: "your subject must consist of at least 4 characters"
+                    required: "Hadi ama, bir konun var, değil mi?",
+                    minlength: "Konu en az 4 karakterden oluşmalı."
                 },
                 number: {
-                    required: "come on, you have a number, don't you?",
-                    minlength: "your Number must consist of at least 5 characters"
+                    required: "Hadi ama, bir numaran var, değil mi?",
+                    minlength: "Numaranız en az 5 karakterden oluşmalı."
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "E-posta olmadan mesaj da olmaz."
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "Hmm...evet, bu formu göndermek için bir şeyler yazmalısınız.",
+                    minlength: "Hepsi bu kadar mı? Gerçekten mi?"
                 }
             },
             submitHandler: function(form) {
@@ -59,16 +59,7 @@ $(document).ready(function(){
                     type:"POST",
                     data: $(form).serialize(),
                     url:"contact_process.php",
-                    success: function() {
-                        $('#contactForm :input').attr('disabled', 'disabled');
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $(this).find(':input').attr('disabled', 'disabled');
-                            $(this).find('label').css('cursor','default');
-                            $('#success').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#success').modal('show');
-                        })
-                    },
+                    success: handleSubmit(),
                     error: function() {
                         $('#contactForm').fadeTo( "slow", 1, function() {
                             $('#error').fadeIn()
@@ -82,4 +73,20 @@ $(document).ready(function(){
     })
         
  })(jQuery)
+
+                     // Formu gönderme işlemi için fonksiyon
+                     function handleSubmit(event) {
+                        event.preventDefault(); // Formu engelle
+                        
+                        let name = document.getElementById('name').value;
+                        let email = document.getElementById('email').value;
+                        let subject = document.getElementById('subject').value;
+                        let message = document.getElementById('message').value;
+                        
+                        // Mailto URL'sini oluşturma
+                        let mailtoLink = `mailto:iletisim@birhaber.com?subject=${encodeURIComponent(subject)}&body=Ad: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0A%0AMesaj:%0A${encodeURIComponent(message)}`;
+                        
+                        // Mailto bağlantısını açma
+                        window.location.href = mailtoLink;
+                    }
 })
